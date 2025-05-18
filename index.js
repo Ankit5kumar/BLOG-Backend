@@ -10,7 +10,7 @@ require("dotenv").config()
 connectDB();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Hello,Blog server is running");
 });
 app.use(authRoute);
