@@ -3,14 +3,14 @@ const app = express();
 const connectDB = require("./config/db");
 const cors = require('cors');
 const path = require('path');
-const authRoute = require('./src/routes/authroute');
+const authroute = require('./src/routes/authroute');
 const BlogRoute = require('./src/routes/blogRoutes');
 app.use(cors())
 require("dotenv").config()
 connectDB();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
-app.use(authRoute);
+app.use(authroute);
 app.use(BlogRoute);
 
 
